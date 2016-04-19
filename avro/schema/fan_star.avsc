@@ -1,0 +1,11 @@
+{
+  "namespace": "com.starcount.fanstar",
+  "type": "record",
+  "name": "fan_star",
+  "doc": "Fan Star - cols as: [Fan, Star, Timestamp]",
+  "fields": [
+    {"name": "Fan", "type": "long"},
+    {"name": "Star", "type": "long"},
+    {"name": "Timestamp", "type": "long"}
+  ]
+}

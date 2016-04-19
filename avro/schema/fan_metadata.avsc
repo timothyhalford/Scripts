@@ -1,0 +1,15 @@
+{
+  "namespace": "com.starcount.fan_metadata",
+  "type": "record",
+  "name": "fan_metadata",
+  "doc": "Fan metadata organised into cols as: [fan_id, gender, latest_date, created_at, watcher,old_age, age]",
+  "fields": [
+    {"name": "Fan", "type": "long"},
+    {"name": "gender", "type": "int"},
+    {"name": "latest_date", "type": "long"},
+    {"name": "created_at", "type": "long"},
+    {"name": "watcher_typology", "type": "int"},
+    {"name": "old_age", "type": "int"},
+    {"name": "age", "type": "int"}
+  ]
+}
