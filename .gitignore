@@ -1,2 +1,2 @@
 /avro/data/*
-/python/*.pyc
+python/Scripts/*.pyc
