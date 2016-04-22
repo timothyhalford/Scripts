@@ -1,5 +1,5 @@
 {
-  "namespace": "com.starcount.fan_metadata",
+  "namespace": "com.starcount",
   "type": "record",
   "name": "fan_metadata",
   "doc": "Fan metadata organised into cols as: [fan_id, gender, latest_date, created_at, watcher,old_age, age]",
