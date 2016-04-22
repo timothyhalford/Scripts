@@ -1,0 +1,7 @@
+task: star_fan_deduped
+args: 
+    master: yarn
+    driver_memory: 5G
+    num_executors: 9
+    executor_memory: 10G
+    executor_cores: 5
