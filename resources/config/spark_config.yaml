@@ -1,0 +1,50 @@
+tasks:
+  -
+    task: "merge_created_at_tsk"
+    args:
+      - 
+        num_executors: 20
+        executor_cores: 1
+        executor_memory: "18G"
+        driver_memory: "38G"
+  -
+    task: "star_fan_timestamped_tsk"
+    args:
+      - 
+        num_executors: 20
+        executor_cores: 1
+        executor_memory: "18G"
+        driver_memory: "38G"
+  -
+    task: "flip_star_fan_tsk"
+    args:
+      - 
+        num_executors: 20
+        executor_cores: 1
+        executor_memory: "18G"
+        driver_memory: "38G"
+  -
+    task: "num_followed_last_followed_tsk"
+    args:
+      - 
+        num_executors: 20
+        executor_cores: 1
+        executor_memory: "18G"
+        driver_memory: "38G"
+  -
+    task: "country_detector_tsk"
+    args:
+      - 
+        num_executors: 20
+        executor_cores: 1
+        executor_memory: "18G"
+        driver_memory: "38G"
+  -
+    task: "enrich_metadata_tsk"
+    args:
+      - 
+        num_executors: 20
+        executor_cores: 1
+        executor_memory: "18G"
+        driver_memory: "38G"
+

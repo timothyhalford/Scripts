@@ -7,8 +7,7 @@ import consul
 
 def __parse_args():
 
-    _description = """Script to convert dir of .h5 files to .avro using
-    specified schemas"""
+    _description = """Small file for consul maintenance."""
 
     parser = argparse.ArgumentParser(description=_description)
     _help = 'Directory of config files used to populate consul'

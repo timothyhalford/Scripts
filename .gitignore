@@ -1,2 +1,4 @@
 /avro/data/*
 python/Scripts/*.pyc
+/python/venv/*
+/scala/project/target/*
