@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# Dynamic Vagrant inventory for Ansible
+#
+# TODO: Add support for private/bridged networking
+# TODO: Add support for machine specific private keys
+
+set -e
+
+machine_document() {
+  machine_name=$1
+  machine_ssh_port=$2
+  cat << EOF
+    $machine_name: {
+      "hosts": ["127.0.0.1"],
+      "vars": {
+        "ansible_port": "$machine_ssh_port"
+      }
+    },
+EOF
+}
+
+vagrant_machines=$(vagrant status | \
+                   grep "running (virtualbox)$" | \
+                   cut -d\  -f1)
+machine_documents=""
+for machine in $vagrant_machines; do
+  machine_port=$(vagrant ssh-config "$machine" | \
+                 grep -E "^\s*Port" | \
+                 sed 's/^ *//g' | \
+                 cut -d\  -f2)
+  machine_document="$(machine_document "$machine" \
+                                       "$machine_port")"
+  machine_documents="$machine_documents $machine_document"
+done
+cat <<EOF
+  {
+    $machine_documents
+    "develop": {
+      "hosts": ["127.0.0.1"],
+      "vars": {
+        "ansible_ssh_common_args": "-o StrictHostKeyChecking=no",
+        "ansible_user": "vagrant",
+        "ansible_private_key_file": "~/.vagrant.d/insecure_private_key"
+      }
+    }
+  }
+EOF
+
